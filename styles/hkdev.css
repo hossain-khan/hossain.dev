@@ -15,8 +15,8 @@ a:hover {
 .btn-secondary:focus {
   color: #333;
   text-shadow: none; /* Prevent inheritance from `body` */
-  background-color: #fff;
-  border: .05rem solid #fff;
+  background-color: #aaa;
+  border: .05rem solid #aaa;
 }
 
 
@@ -98,7 +98,8 @@ body {
 }
 
 .cover-heading {
-  font-size: 8rem;
+  /* Use very large title */
+  font-size: 6rem;
 }
 
 
