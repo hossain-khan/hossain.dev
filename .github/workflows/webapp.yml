@@ -1,4 +1,4 @@
-name: Node.js CI
+name: HTML5 Site
 
 on: [push]
 
@@ -18,8 +18,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install
-    - run: npm i html-validate
+    - run: npm install html-validate
     # https://www.npmjs.com/package/html-validate
-    - run: html-validate index.html
+    - run: npx html-validate index.html
       env:
         CI: true
