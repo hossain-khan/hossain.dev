@@ -99,7 +99,7 @@ body {
 
 .cover-heading {
   /* Use very large title */
-  font-size: 6rem;
+  font-size: 5rem;
 }
 
 
@@ -122,5 +122,13 @@ body {
 @media (min-width: 768px) {
   .bd-placeholder-img-lg {
       font-size: 3.5rem;
+  }
+}
+
+/* Screen = 1281px to higher resolution desktops */
+@media (min-width: 1281px) {
+  .cover-heading {
+    /* Use event very large title */
+    font-size: 8rem;
   }
 }
