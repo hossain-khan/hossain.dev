@@ -10,12 +10,22 @@ npx html-validate index.html
 ```
 
 
-Use following to run local server for development.
-```
+## Tip
+Use following to run local server for development from macOS.
+```shell
 python -m SimpleHTTPServer 8000
 
 # On new MacOS with Python 3
 python3 -m http.server
 
 Then visit: http://localhost:8000/
+```
+
+### Run locally from *NIX
+
+Alternative universal way to run it from Windows, MacOS or Linux using npm module.
+
+```shell
+npm install --global http-server
+http-server ./ -a 127.0.0.1 --port 80 --cors
 ```
