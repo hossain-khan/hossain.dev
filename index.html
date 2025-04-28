@@ -11,6 +11,20 @@
     <meta name="geo.placename" content="Toronto">
     <meta name="geo.region" content="Ontario, Canada">
     <meta name="theme-color" content="#323232">
+    
+    <!-- Open Graph / Facebook Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hossain.dev/">
+    <meta property="og:title" content="Hossain Khan - Software Engineer">
+    <meta property="og:description" content="Hossain Khan's engineering portfolio website.">
+    <meta property="og:image" content="https://hossain.dev/images/icons/icon-512x512.png">
+    
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://hossain.dev/">
+    <meta name="twitter:title" content="Hossain Khan - Software Engineer">
+    <meta name="twitter:description" content="Hossain Khan's engineering portfolio website.">
+    <meta name="twitter:image" content="https://hossain.dev/images/icons/icon-512x512.png">
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" href="images/icons/icon-192x192.png" sizes="192x192">
@@ -19,6 +33,10 @@
     <link rel="manifest" href="manifest.json">
     <link rel="icon" href="images/icons/icon-72x72.png">
 
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://www.google-analytics.com">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="styles/bootstrap.min.css">
 
@@ -26,27 +44,48 @@
     <!-- Custom styles for hossain.dev -->
     <link href="styles/hkdev.css" rel="stylesheet">
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1394009-16"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LLPDSXLW0V"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-      gtag('config', 'UA-1394009-16');
+        gtag('config', 'G-LLPDSXLW0V');
     </script>
 </head>
 
 <body class="text-center">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto mb-auto flex-column">
         <main class="inner cover mt-auto mb-auto">
-            <img src="images/say-hi-icon.svg" width="140rem" height="140rem" alt="Hello visitor! Howdy?">
+            <img src="images/say-hi-icon.svg" width="140" height="140" alt="Hello visitor! Howdy?" loading="lazy" aria-role="img">
             <h1 class="cover-heading boujee-text">Hi, I'm Hossain.</h1>
             <p class="lead">Passionate software engineer.</p>
             <p class="lead">
-                <a href="https://hossainkhan.com/" class="btn btn-lg btn-secondary">Portfolio</a>
+                <a href="https://hossainkhan.com/" class="btn btn-lg btn-secondary" aria-label="View Hossain's Portfolio">Portfolio</a>
             </p>
+            <div class="social-links mt-4">
+                <a href="https://github.com/amardeshbd" aria-label="GitHub Profile" class="social-link mx-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </a>
+                <a href="https://linkedin.com/in/hossainkhan" aria-label="LinkedIn Profile" class="social-link mx-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a>
+            </div>
         </main>
     </div>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js').then(function(registration) {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, function(err) {
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
+    </script>
 </body>
 </html>
