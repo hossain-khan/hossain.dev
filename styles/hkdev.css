@@ -13,12 +13,20 @@ a:hover {
 .btn-secondary,
 .btn-secondary:hover,
 .btn-secondary:focus {
-  color: #333;
+  color: #000;
   text-shadow: none; /* Prevent inheritance from `body` */
-  background-color: #aaa;
-  border: .05rem solid #aaa;
+  background-color: #fff;
+  border: .05rem solid #fff;
+  font-weight: 700;
 }
 
+/* Additional states for better interactive feedback */
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background-color: #f0f0f0;
+  border-color: #f0f0f0;
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+}
 
 /*
  * Base structure
