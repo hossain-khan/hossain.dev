@@ -72,6 +72,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                 </a>
             </div>
+            <div id="joke-container"></div>
         </main>
     </div>
 
@@ -86,6 +87,34 @@
                 });
             });
         }
+    </script>
+
+    <script>
+        const jokes = [
+            "Why do programmers prefer dark mode? Because light attracts bugs!",
+            "Why was the JavaScript developer sad? Because he didn't Node how to Express himself.",
+            "What's a programmer's favorite hangout place? Foo Bar.",
+            "Why did the private classes break up? Because they never saw each other.",
+            "How many programmers does it take to change a light bulb? None, that's a hardware problem.",
+            "Why do Java developers wear glasses? Because they don't C#.",
+            "What's the object-oriented way to become wealthy? Inheritance."
+        ];
+
+        function displayJoke() {
+            const jokeContainer = document.getElementById('joke-container');
+            if (jokeContainer) {
+                const randomIndex = Math.floor(Math.random() * jokes.length);
+                jokeContainer.innerHTML = jokes[randomIndex];
+                jokeContainer.classList.add('joke-visible');
+
+                setTimeout(() => {
+                    jokeContainer.classList.remove('joke-visible');
+                }, 7000); // Hide after 7 seconds
+            }
+        }
+
+        // Wait for 10 seconds after page load, then display a joke
+        setTimeout(displayJoke, 10000); // Display joke after 10 seconds
     </script>
 </body>
 </html>

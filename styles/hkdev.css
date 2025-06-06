@@ -178,3 +178,29 @@ https://web.dev/articles/speedy-css-tip-animated-gradient-text
     }
   }
 }
+
+/* Joke Container Styles */
+#joke-container {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #f0f0f0;
+  border-radius: 8px;
+  font-size: 0.9em;
+  text-align: center;
+  z-index: 1000;
+  visibility: hidden;
+  opacity: 0;
+  /* Delay visibility transition to allow opacity to fade out smoothly */
+  transition: visibility 0s linear 0.5s, opacity 0.5s ease-in-out;
+}
+
+#joke-container.joke-visible {
+  visibility: visible;
+  opacity: 1;
+  /* Shorter transition for fade-in, no delay for visibility */
+  transition: opacity 0.5s ease-in-out;
+}
