@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- 👋🏽 Psst... Did you know? The best bugs are no bugs at all! 🐞 -->
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -38,6 +39,13 @@
     <link rel="preconnect" href="https://www.googletagmanager.com">
     <link rel="preconnect" href="https://www.google-analytics.com">
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="styles/bootstrap.min.css">
 
@@ -49,7 +57,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LLPDSXLW0V"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
         gtag('config', 'G-LLPDSXLW0V');
@@ -59,18 +67,43 @@
 <body class="text-center">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto mb-auto flex-column">
         <main class="inner cover mt-auto mb-auto">
-            <img src="images/say-hi-icon.svg" width="140" height="140" alt="Hello visitor! Howdy?" loading="lazy" aria-role="img">
-            <h1 class="cover-heading boujee-text">Hi, I'm Hossain.</h1>
-            <p class="lead">Passionate software engineer.</p>
-            <p class="lead">
-                <a href="https://hossainkhan.com/" class="btn btn-lg btn-secondary" aria-label="View Hossain's Portfolio">Portfolio</a>
-            </p>
-            <div class="social-links mt-4">
-                <a href="https://github.com/hossain-khan" aria-label="GitHub Profile" class="social-link mx-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            <div class="profile-section mb-5">
+                <div class="profile-image-container mb-4">
+                    <img src="images/say-hi-icon.svg" width="120" height="120" alt="Hello visitor! Howdy?"
+                        loading="lazy" aria-role="img" class="profile-image">
+                </div>
+                <h1 class="display-1 fw-bold mb-3 main-heading">Hossain Khan</h1>
+                <p class="fs-4 text-muted mb-1 profession">Passionate Software Engineer</p>
+            </div>
+
+            <div class="cta-section mb-5">
+                <a href="https://hossainkhan.com/" class="btn btn-primary btn-lg px-5 py-3 portfolio-btn"
+                    aria-label="View Hossain's Portfolio">
+                    Portfolio
                 </a>
-                <a href="https://www.linkedin.com/in/hossain/" aria-label="LinkedIn Profile" class="social-link mx-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </div>
+
+            <div class="social-links">
+                <a href="https://github.com/hossain-khan" aria-label="GitHub Profile" class="social-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        aria-hidden="true">
+                        <path
+                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                        </path>
+                    </svg>
+                </a>
+                <!-- <a href="https://www.linkedin.com/in/hossain/" aria-label="LinkedIn Profile" class="social-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a> -->
+                <a href="https://bsky.app/profile/hossain.dev" aria-label="Bluesky Profile" class="social-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 256 256" fill="none"
+                        stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"
+                        aria-hidden="true">
+                        <path
+                            d="m28.752 84.74c-4.278 0-8.909-2.531-13.802-7.552-4.529-4.647-6.255-9.564-4.861-13.844 1.188-3.649 4.507-6.611 9.587-8.66-7.502-.791-14.721-4.535-17.195-13.374-.966-3.455-2.481-23.567-2.481-26.074 0-4.735 1.402-7.837 4.166-9.218 4.562-2.278 11.52.911 16.509 4.657l-.601.8.601-.8c9.534 7.158 19.743 21.188 24.325 29.772 4.583-8.584 14.792-22.616 24.325-29.772 4.989-3.746 11.949-6.934 16.509-4.657 2.765 1.381 4.166 4.483 4.166 9.218 0 2.506-1.515 22.617-2.481 26.073-2.474 8.839-9.694 12.582-17.194 13.375 5.081 2.049 8.398 5.01 9.588 8.66 1.394 4.279-.333 9.196-4.862 13.844-5.795 5.946-11.224 8.401-16.132 7.293-7.964-1.796-12.207-12.55-13.919-17.441-1.712 4.893-5.952 15.643-13.916 17.441-.765.173-1.542.259-2.332.259zm-.538-32.344c.479 0 .902.345.985.832.093.545-.273 1.062-.818 1.153-9.06 1.542-14.881 4.945-16.392 9.583-1.169 3.59.35 7.68 4.393 11.828 5.279 5.417 10.076 7.685 14.261 6.738 7.552-1.705 11.538-13.406 12.847-17.251.511-1.499.724-2.094 1.509-2.037.801-.056.999.539 1.509 2.037 1.312 3.848 5.3 15.547 12.85 17.251 4.191.951 8.983-1.322 14.26-6.738 4.042-4.148 5.562-8.238 4.392-11.828-1.511-4.638-7.331-8.041-16.391-9.583-.544-.092-.91-.608-.817-1.153.092-.544.611-.91 1.153-.817 8.97 1.526 20.549-.604 23.638-11.64.88-3.147 2.407-22.878 2.407-25.535 0-3.915-1.029-6.415-3.06-7.429-3.516-1.752-9.769.98-14.414 4.467-9.967 7.481-20.705 22.699-24.625 30.808-.334.691-1.467.691-1.801 0-3.92-8.108-14.658-23.326-24.625-30.808-4.646-3.487-10.906-6.223-14.415-4.466-2.031 1.014-3.06 3.513-3.06 7.428 0 2.657 1.527 22.389 2.407 25.534 3.087 11.03 14.657 13.163 23.631 11.641.003-.002.006-.001.007-.001.058-.01.114-.014.169-.014z"
+                            transform="matrix(2.81 0 0 2.81 1.406593 1.406593)" />
+                    </svg>
                 </a>
             </div>
             <div id="joke-container"></div>
@@ -80,10 +113,10 @@
     <!-- Service Worker Registration -->
     <script>
         if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function() {
-                navigator.serviceWorker.register('/sw.js').then(function(registration) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('/sw.js').then(function (registration) {
                     console.log('ServiceWorker registration successful with scope: ', registration.scope);
-                }, function(err) {
+                }, function (err) {
                     console.log('ServiceWorker registration failed: ', err);
                 });
             });
@@ -118,4 +151,5 @@
         setTimeout(displayJoke, 10000); // Display joke after 10 seconds
     </script>
 </body>
+
 </html>
