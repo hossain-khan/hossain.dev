@@ -52,6 +52,7 @@
     <title>hossain.dev - Hossain Khan</title>
     <!-- Custom styles for hossain.dev -->
     <link href="styles/hkdev.css" rel="stylesheet">
+    <link rel="canonical" href="https://hossain.dev/">
 
     <!-- Global site tag (gtag.js) - Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LLPDSXLW0V"></script>
@@ -62,6 +63,40 @@
 
         gtag('config', 'G-LLPDSXLW0V');
     </script>
+
+    <!-- SEO Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://hossain.dev/#website",
+      "url": "https://hossain.dev/",
+      "name": "hossain.dev",
+      "description": "Hossain Khan's engineering portfolio website.",
+      "publisher": { "@id": "https://hossain.dev/#person" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://hossain.dev/#person",
+      "name": "Hossain Khan",
+      "url": "https://hossain.dev/",
+      "image": "https://hossain.dev/images/icons/icon-512x512.png",
+      "jobTitle": "Software Engineer",
+      "homeLocation": { "@type": "Place", "name": "Toronto, Ontario, Canada" },
+      "sameAs": [
+        "https://github.com/hossain-khan",
+        "https://bsky.app/profile/hossain.dev",
+        "https://androiddev.social/@hossainkhan",
+        "https://www.linkedin.com/in/hossain/",
+        "https://hossainkhan.medium.com/",
+        "https://hossainkhan.com/"
+      ]
+    }
+  ]
+}
+    </script>
 </head>
 
 <body class="text-center">
@@ -70,7 +105,7 @@
             <div class="profile-section mb-5">
                 <div class="profile-image-container mb-4">
                     <img src="images/say-hi-icon.svg" width="120" height="120" alt="Hello visitor! Howdy?"
-                        loading="lazy" aria-role="img" class="profile-image">
+                        loading="lazy" role="img" class="profile-image">
                 </div>
                 <h1 class="display-1 fw-bold mb-3 main-heading">Hossain Khan</h1>
                 <p class="fs-4 mb-1 profession">Passionate Software Engineer</p>
