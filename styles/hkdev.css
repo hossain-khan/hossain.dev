@@ -22,7 +22,9 @@ a:hover {
 
 /* Primary Button - Portfolio */
 .btn-primary {
-  background: linear-gradient(135deg, #4c7cdb 0%, #2a5298 100%);
+  background: linear-gradient(135deg, #4c7cdb 0%, #2a5298 50%, #1e3c72 100%);
+  background-size: 200% 200%;
+  animation: btnGradientShift 8s ease infinite;
   border: none;
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -145,6 +147,12 @@ body::after {
   }
 }
 
+@keyframes btnGradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 body {
   display: -ms-flexbox;
   display: flex;
@@ -262,6 +270,26 @@ body {
   transform: scale(1.1);
 }
 
+/* Accessible focus styles */
+.btn:focus-visible,
+.portfolio-btn:focus-visible,
+.contact-btn:focus-visible,
+.social-link:focus-visible,
+ a:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.2);
+}
+
+/* Remove default focus outline when not keyboard-focused */
+.btn:focus,
+.portfolio-btn:focus,
+.contact-btn:focus,
+.social-link:focus,
+ a:focus {
+  outline: none;
+}
+
 /*
  * Responsive Design
  */
@@ -303,10 +331,10 @@ body {
   left: 50%;
   transform: translateX(-50%);
   padding: 10px 20px;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.55);
   color: #f0f0f0;
   border-radius: 8px;
-  font-size: 0.9em;
+  font-size: 1em;
   text-align: center;
   z-index: 1000;
   visibility: hidden;
@@ -320,4 +348,14 @@ body {
   opacity: 1;
   /* Shorter transition for fade-in, no delay for visibility */
   transition: opacity 0.5s ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-primary {
+    animation: none;
+  }
+  body::before,
+  body::after {
+    animation: none;
+  }
 }
