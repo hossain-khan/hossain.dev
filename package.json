@@ -1,0 +1,19 @@
+{
+  "name": "hossain-dev-site",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Personal developer site static assets and lint configuration",
+  "license": "MIT",
+  "scripts": {
+    "lint": "npm run lint:html && npm run lint:css && npm run lint:sw",
+    "lint:html": "html-validate index.html",
+    "lint:css": "stylelint \"styles/*.css\"",
+    "lint:sw": "eslint sw.js"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "html-validate": "^9.0.0",
+    "stylelint": "^16.0.0",
+    "stylelint-config-standard": "^36.0.0"
+  }
+}
