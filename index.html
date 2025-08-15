@@ -106,8 +106,10 @@
             <div class="hero-card">
                 <div class="profile-section mb-5">
                     <div class="profile-image-container mb-4">
-                        <img src="images/say-hi-icon.svg" width="120" height="120" alt="Hello visitor! Howdy?"
-                            loading="lazy" class="profile-image">
+                        <picture>
+                            <source srcset="images/say-hi-icon.svg" media="(prefers-color-scheme: dark)">
+                            <img src="images/say-hi-icon-colored.svg" width="120" height="120" alt="Hello visitor! Howdy?" loading="lazy" class="profile-image">
+                        </picture>
                     </div>
                     <h1 class="display-1 fw-bold mb-3 main-heading">Hi, I'm Hossain</h1>
                     <p class="fs-4 mb-1 profession handwritten">Passionate Software Engineer</p>
