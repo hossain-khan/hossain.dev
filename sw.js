@@ -1,11 +1,14 @@
 // Service Worker for hossain.dev
-const CACHE_NAME = 'hossain-dev-cache-v1';
+// Increment this version string to force clients to fetch a fresh copy of assets.
+const CACHE_VERSION = 'v2';
+const CACHE_NAME = `hossain-dev-cache-${CACHE_VERSION}`;
 const urlsToCache = [
   '/',
   '/index.html',
   '/styles/bootstrap.min.css',
   '/styles/hkdev.css',
   '/images/say-hi-icon.svg',
+  '/images/say-hi-icon-colored.svg',
   '/images/icons/icon-72x72.png',
   '/images/icons/icon-96x96.png',
   '/images/icons/icon-128x128.png',
@@ -22,9 +25,10 @@ self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => {
-        console.log('Opened cache');
+        console.log('Opened cache', CACHE_NAME);
         return cache.addAll(urlsToCache);
       })
+      .then(() => self.skipWaiting())
   );
 });
 
@@ -65,11 +69,11 @@ self.addEventListener('activate', event => {
     caches.keys().then(cacheNames => {
       return Promise.all(
         cacheNames.map(cacheName => {
-          if (cacheWhitelist.indexOf(cacheName) === -1) {
+          if (!cacheWhitelist.includes(cacheName)) {
             return caches.delete(cacheName);
           }
         })
       );
-    })
+    }).then(() => self.clients.claim())
   );
 });
