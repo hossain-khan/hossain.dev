@@ -1,24 +1,37 @@
 name: HTML5 Site
 
-on: [push]
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: ["**"]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
-        node-version: [18.x]
-
+        node-version: [20.x]
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: npm install html-validate
-    # https://www.npmjs.com/package/html-validate
-    - run: npx html-validate index.html
-      env:
-        CI: true
+      - uses: actions/checkout@v4
+      # https://github.com/actions/setup-node
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm install
+      - name: Lint HTML, CSS, and Service Worker
+        run: npm run lint
+        env:
+          CI: true
+      - name: Upload source artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+            name: site-source
+            path: |
+              index.html
+              styles/hkdev.css
+              sw.js
