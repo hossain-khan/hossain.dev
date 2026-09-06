@@ -9,6 +9,8 @@ Run following to validate html page.
 npx html-validate index.html
 ```
 
+> [!NOTE]
+> This site's repo has been moved. Current repo does not generate site for hossain.dev anymore! 👋
 
 ## Tip
 Use following to run local server for development from macOS.
